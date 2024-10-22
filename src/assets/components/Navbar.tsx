@@ -5,12 +5,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { Logo } from "@images";
 import { navVariant, navLogoVariant } from "@variants";
-import NavbarLinkHolder from "./NavbarLinkHolder";
-import { usePathname } from "next/navigation";
+// import NavbarLinkHolder from "./NavbarLinkHolder";
+// import { usePathname } from "next/navigation";
 
 const Navbar: React.FC = () => {
     const [isAnimated, setIsAnimated] = useState<boolean>(false);
-    const pathname: string = usePathname();
+    // const pathname: string = usePathname();
 
     return (
         <motion.nav
