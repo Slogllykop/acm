@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { CustomLayout } from "@components";
 import { Poppins } from "next/font/google";
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+config.autoAddCss = false;
 
 // const geistSans = localFont({
 //     src: "./fonts/GeistVF.woff",
@@ -34,7 +37,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" className={poppins.className}>
-            <body className={`min-h-screen antialiased`}>
+            <body className={`scrollbar min-h-screen antialiased`}>
                 {/* <Navbar /> */}
                 <CustomLayout>{children}</CustomLayout>
             </body>

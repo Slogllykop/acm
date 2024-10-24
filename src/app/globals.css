@@ -14,14 +14,34 @@
     }
 }
 
-/* body {
-    color: var(--foreground);
-    background: var(--background);
-    font-family: Arial, Helvetica, sans-serif;
-} */
-
 @layer utilities {
-    .text-balance {
-        text-wrap: balance;
+    .scrollbar::-webkit-scrollbar {
+        @apply size-1;
+    }
+
+    .scrollbar::-webkit-scrollbar-track {
+        @apply bg-zinc-950;
+    }
+
+    .scrollbar::-webkit-scrollbar-thumb {
+        @apply bg-sky-400;
+    }
+
+    .scrollbar::-webkit-scrollbar-thumb:hover {
+        @apply bg-sky-700;
+    }
+
+    .bg-grid-white {
+        background-size: 2.5rem 2.5rem;
+        background-image: linear-gradient(
+                to right,
+                rgb(255 255 255 / 0.05) 1px,
+                transparent 1px
+            ),
+            linear-gradient(
+                to bottom,
+                rgb(255 255 255 / 0.05) 1px,
+                transparent 1px
+            );
     }
 }
