@@ -1,23 +1,10 @@
 // HERO SECTION VARIANTS ARE DEFINED HERE
 
+import type { Variants } from "framer-motion";
+
 const EASE_KEYFRAMES = [0.1, 0.9, 0.2, 1];
 
-type moveUp = {
-    loading: {
-        opacity: number;
-        translateY: number | string;
-    };
-    loaded: {
-        opacity: number;
-        translateY: number | string;
-        transition: {
-            duration: number;
-            ease: number[] | number;
-        };
-    };
-};
-
-export const heroTitle: Readonly<moveUp> = {
+export const heroTitle: Readonly<Variants> = {
     loading: {
         translateY: "50px",
         opacity: 0,
@@ -35,7 +22,7 @@ export const heroTitle: Readonly<moveUp> = {
 // ====================================================================================
 // ====================================================================================
 
-export const heroSubtext: Readonly<moveUp> = {
+export const heroSubtext: Readonly<Variants> = {
     loading: {
         translateY: "50px",
         opacity: 0,

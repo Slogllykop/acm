@@ -1,29 +1,10 @@
 // NAVBAR VARIANTS ARE DEFINED HERE
 
+import type { Variants } from "framer-motion";
+
 const EASE_KEYFRAMES = [0.1, 0.9, 0.2, 1];
 
-type navVariant = {
-    loading: {
-        inset: string | number;
-        borderRadius: string | number;
-        width: string | number;
-        height: string | number;
-    };
-    loaded: {
-        inset: string | number;
-        borderRadius: string | number;
-        width: string | number;
-        height: string | number;
-    };
-    expanded: {
-        inset: string | number;
-        borderRadius: string | number;
-        width: string | number;
-        height: string | number;
-    };
-};
-
-export const navVariant: Readonly<navVariant> = {
+export const navVariant: Readonly<Variants> = {
     loading: {
         inset: 0,
         width: "100vw",
@@ -41,30 +22,14 @@ export const navVariant: Readonly<navVariant> = {
         width: "calc(100vw - 4rem)",
         height: "400px",
         borderRadius: "40px",
+        transition: { duration: 0.5, ease: EASE_KEYFRAMES },
     },
 };
 
 // ====================================================================================
 // ====================================================================================
 
-type navLogoVariant = {
-    loading: {
-        top: string | number;
-        left: string | number;
-    };
-    loaded: {
-        top: string | number;
-        left: string | number;
-        transition: {
-            duration: number;
-            delay: number;
-            x: { type: string };
-            ease: number[] | number;
-        };
-    };
-};
-
-export const navLogoVariant: Readonly<navLogoVariant> = {
+export const navLogoVariant: Readonly<Variants> = {
     loading: {
         top: "calc(50% - 20px)",
         left: "calc(50% - 90px)",
@@ -84,19 +49,7 @@ export const navLogoVariant: Readonly<navLogoVariant> = {
 // ====================================================================================
 // ====================================================================================
 
-type navLinkVariant = {
-    loading: {
-        translateX: number;
-        opacity: number;
-    };
-    loaded: {
-        translateX: number;
-        opacity: number;
-        transition: { duration: number };
-    };
-};
-
-export const navLinkVariant: Readonly<navLinkVariant> = {
+export const navLinkVariant: Readonly<Variants> = {
     loading: {
         translateX: 50,
         opacity: 0,
@@ -111,16 +64,7 @@ export const navLinkVariant: Readonly<navLinkVariant> = {
 // ====================================================================================
 // ====================================================================================
 
-type navLinkHolderVariant = {
-    loading: {
-        transition: { staggerChildren: number; delayChildren: number };
-    };
-    loaded: {
-        transition: { staggerChildren: number; staggerDirection: number };
-    };
-};
-
-export const navLinkHolderVariant: Readonly<navLinkHolderVariant> = {
+export const navLinkHolderVariant: Readonly<Variants> = {
     loading: {
         transition: { staggerChildren: 0.2, delayChildren: 0.75 },
     },
@@ -132,20 +76,7 @@ export const navLinkHolderVariant: Readonly<navLinkHolderVariant> = {
 // ====================================================================================
 // ====================================================================================
 
-type logoSubtextVariant = {
-    loading: {
-        opacity: number;
-    };
-    loaded: {
-        opacity: number;
-        transition: {
-            duration: number;
-            ease: number[] | number;
-        };
-    };
-};
-
-export const logoSubtextVariant: Readonly<logoSubtextVariant> = {
+export const logoSubtextVariant: Readonly<Variants> = {
     loading: {
         opacity: 1,
     },
