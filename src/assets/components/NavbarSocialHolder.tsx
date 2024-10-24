@@ -13,7 +13,7 @@ const NavbarLinkHolder: React.FC<NavbarLinkHolderProps> = ({
 }): React.ReactElement => {
     return (
         <motion.div
-            className="flex items-center justify-between gap-3 border-0 border-red-500"
+            className="hidden items-center justify-between gap-3 border-0 border-red-500 md:flex"
             variants={navLinkHolderVariant}
         >
             {SOCIALS.map((link) => {

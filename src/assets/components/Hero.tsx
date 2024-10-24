@@ -3,8 +3,10 @@ import React from "react";
 import { Spotlight } from "@components";
 import { motion } from "framer-motion";
 import { heroTitle, heroSubtext } from "@variants";
+import { useStatus, type initialStatusType } from "@/assets/context";
 
 const Hero: React.FC = (): React.ReactElement => {
+    const { hasFinishedLoading }: initialStatusType = useStatus();
     return (
         <div className="bg-grid-white relative flex h-[100dvh] w-full animate-moveX items-center justify-center overflow-hidden bg-black/[0.96] antialiased">
             <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent to-40%"></div>
@@ -15,7 +17,10 @@ const Hero: React.FC = (): React.ReactElement => {
             <motion.div
                 initial="loading"
                 animate="loaded"
-                transition={{ staggerChildren: 0.5, delayChildren: 2.25 }}
+                transition={{
+                    staggerChildren: 0.5,
+                    delayChildren: hasFinishedLoading ? 0 : 2.25,
+                }}
                 className="relative z-10 mx-auto w-full max-w-7xl p-4"
             >
                 <motion.h1

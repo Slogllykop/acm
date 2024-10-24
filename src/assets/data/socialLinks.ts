@@ -6,7 +6,14 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import React from "react";
 
-export const SOCIALS = [
+type SOCIALS_TYPE = {
+    id: number;
+    name: string;
+    href: string;
+    icon: React.ReactElement;
+};
+
+export const SOCIALS: Readonly<SOCIALS_TYPE[]> = [
     {
         id: 1,
         name: "Instagram",

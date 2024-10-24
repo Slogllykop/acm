@@ -41,7 +41,7 @@ const config: Config = {
                 foreground: "var(--foreground)",
             },
             animation: {
-                spotlight: "spotlight 2s ease 3s 1 forwards",
+                spotlight: "spotlight 2s ease 0.75s 1 forwards",
                 moveX: "moveX 30s linear infinite",
             },
             keyframes: {

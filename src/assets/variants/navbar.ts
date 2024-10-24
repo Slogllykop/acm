@@ -44,6 +44,10 @@ export const navLogoVariant: Readonly<Variants> = {
             ease: EASE_KEYFRAMES,
         },
     },
+    expanded: {
+        top: "1rem",
+        left: "1rem",
+    },
 };
 
 // ====================================================================================
@@ -57,7 +61,7 @@ export const navLinkVariant: Readonly<Variants> = {
     loaded: {
         translateX: 0,
         opacity: 1,
-        transition: { duration: 0.5 },
+        transition: { duration: 0.5, when: "afterParent" },
     },
 };
 
