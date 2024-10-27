@@ -92,3 +92,74 @@ export const logoSubtextVariant: Readonly<Variants> = {
         },
     },
 };
+
+// ====================================================================================
+// ====================================================================================
+
+export const navbarBarsVariant: Readonly<Variants> = {
+    loading: {
+        translateX: "1rem",
+        opacity: 0,
+    },
+    loaded: {
+        translateX: 0,
+        opacity: 1,
+        transition: {
+            duration: 2,
+            ease: EASE_KEYFRAMES,
+        },
+    },
+};
+
+// ====================================================================================
+// ====================================================================================
+
+export const navbarMobileLinksVariant: Readonly<Variants> = {
+    loaded: {
+        opacity: 0,
+        transition: {
+            staggerDirection: -1,
+            staggerChildren: 0.1,
+        },
+    },
+    expanded: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.1,
+            delayChildren: 0.25,
+        },
+    },
+};
+
+// ====================================================================================
+// ====================================================================================
+
+export const navbarMobileLinkVariant: Readonly<Variants> = {
+    loaded: {
+        opacity: 0,
+        translateY: -50,
+    },
+    expanded: {
+        opacity: 1,
+        translateY: 0,
+        transition: {
+            ease: EASE_KEYFRAMES,
+            duration: 0.5,
+        },
+    },
+};
+
+// ====================================================================================
+// ====================================================================================
+
+export const navbarMobileHeaderVariant: Readonly<Variants> = {
+    loaded: {
+        height: 0,
+        opacity: 0,
+    },
+
+    expanded: {
+        height: "auto",
+        opacity: 1,
+    },
+};

@@ -6,6 +6,8 @@ import Hero from "./Hero";
 import NavbarMobile from "./NavbarMobile";
 import NavbarLinkHolder from "./NavbarLinkHolder";
 import NavbarSocialHolder from "./NavbarSocialHolder";
+import NavbarMobileLinkHolder from "./NavbarMobileLinksHolder";
+import NavbarMobileSocialsHolder from "./NavbarMobileSocials";
 
 export {
     Navbar,
@@ -16,4 +18,6 @@ export {
     NavbarMobile,
     NavbarLinkHolder,
     NavbarSocialHolder,
+    NavbarMobileLinkHolder,
+    NavbarMobileSocialsHolder,
 };

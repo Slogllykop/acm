@@ -6,7 +6,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import React from "react";
 
-type SOCIALS_TYPE = {
+export type SOCIALS_TYPE = {
     id: number;
     name: string;
     href: string;
@@ -39,6 +39,36 @@ export const SOCIALS: Readonly<SOCIALS_TYPE[]> = [
         icon: React.createElement(FontAwesomeIcon, {
             icon: faFacebook,
             size: "lg",
+        }),
+    },
+];
+
+export const SOCIALS_MOBILE: Readonly<SOCIALS_TYPE[]> = [
+    {
+        id: 1,
+        name: "Instagram",
+        href: "https://www.instagram.com/pesmcoe_acm",
+        icon: React.createElement(FontAwesomeIcon, {
+            icon: faInstagram,
+            size: "xl",
+        }),
+    },
+    {
+        id: 2,
+        name: "LinkedIn",
+        href: "https://www.linkedin.com/company/pesmcoe-acm-student-chapter",
+        icon: React.createElement(FontAwesomeIcon, {
+            icon: faLinkedin,
+            size: "xl",
+        }),
+    },
+    {
+        id: 3,
+        name: "Facebook",
+        href: "https://www.facebook.com/pesmcoeacm",
+        icon: React.createElement(FontAwesomeIcon, {
+            icon: faFacebook,
+            size: "xl",
         }),
     },
 ];

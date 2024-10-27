@@ -58,7 +58,7 @@ const Navbar: React.FC = () => {
                 <>
                     <span className="user-select-none pointer-events-none hidden w-16 md:block"></span>
                     <NavbarLinkHolder pathname={pathname} />
-                    <NavbarSocialHolder pathname={pathname} />
+                    <NavbarSocialHolder />
                     <NavbarMobile pathname={pathname} />
                 </>
             )}
