@@ -7,9 +7,10 @@ export {
     navVariant,
     logoSubtextVariant,
     navbarBarsVariant,
-    navbarMobileLinksVariant,
-    navbarMobileLinkVariant,
-    navbarMobileHeaderVariant,
+    navbarMobileMoveYHolderVariant,
+    navbarMobileLinkMoveYVariant,
+    navbarMobileSocialsDividerVariant,
+    navbarMobileMoveYHolderDelayedVariant,
 } from "./navbar";
 
 export { heroTitle, heroSubtext } from "./hero";

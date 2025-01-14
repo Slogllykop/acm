@@ -93,6 +93,8 @@ export const logoSubtextVariant: Readonly<Variants> = {
     },
 };
 
+// MOBILE NAVBAR VARIANTS
+
 // ====================================================================================
 // ====================================================================================
 
@@ -114,7 +116,7 @@ export const navbarBarsVariant: Readonly<Variants> = {
 // ====================================================================================
 // ====================================================================================
 
-export const navbarMobileLinksVariant: Readonly<Variants> = {
+export const navbarMobileMoveYHolderVariant: Readonly<Variants> = {
     loaded: {
         opacity: 0,
         transition: {
@@ -134,7 +136,21 @@ export const navbarMobileLinksVariant: Readonly<Variants> = {
 // ====================================================================================
 // ====================================================================================
 
-export const navbarMobileLinkVariant: Readonly<Variants> = {
+export const navbarMobileMoveYHolderDelayedVariant: Readonly<Variants> = {
+    ...navbarMobileMoveYHolderVariant,
+    expanded: {
+        ...navbarMobileMoveYHolderVariant.expanded,
+        transition: {
+            staggerChildren: 0.1,
+            delayChildren: 0.75,
+        },
+    },
+};
+
+// ====================================================================================
+// ====================================================================================
+
+export const navbarMobileLinkMoveYVariant: Readonly<Variants> = {
     loaded: {
         opacity: 0,
         translateY: -50,
@@ -152,14 +168,18 @@ export const navbarMobileLinkVariant: Readonly<Variants> = {
 // ====================================================================================
 // ====================================================================================
 
-export const navbarMobileHeaderVariant: Readonly<Variants> = {
+export const navbarMobileSocialsDividerVariant: Readonly<Variants> = {
     loaded: {
         height: 0,
         opacity: 0,
     },
-
     expanded: {
-        height: "auto",
         opacity: 1,
+        height: "175px",
+        transition: {
+            ease: EASE_KEYFRAMES,
+            duration: 0.5,
+            delay: 0.5,
+        },
     },
 };

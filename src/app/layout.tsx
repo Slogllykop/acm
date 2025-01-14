@@ -38,7 +38,6 @@ export default function RootLayout({
     return (
         <html lang="en" className={poppins.className}>
             <body className={`scrollbar min-h-screen antialiased`}>
-                {/* <Navbar /> */}
                 <CustomLayout>{children}</CustomLayout>
             </body>
         </html>

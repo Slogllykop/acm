@@ -8,6 +8,7 @@ import NavbarLinkHolder from "./NavbarLinkHolder";
 import NavbarSocialHolder from "./NavbarSocialHolder";
 import NavbarMobileLinkHolder from "./NavbarMobileLinksHolder";
 import NavbarMobileSocialsHolder from "./NavbarMobileSocials";
+import InfiniteCarousel from "./InfiniteCarousel";
 
 export {
     Navbar,
@@ -20,4 +21,5 @@ export {
     NavbarSocialHolder,
     NavbarMobileLinkHolder,
     NavbarMobileSocialsHolder,
+    InfiniteCarousel,
 };

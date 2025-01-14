@@ -33,8 +33,10 @@ const NavbarMobile: React.FC<NavbarMobileProps> = ({
                     }}
                 />
             </motion.i>
-            <NavbarMobileLinkHolder pathname={pathname} />
-            <NavbarMobileSocialsHolder />
+            <div className="grid h-[350px] grid-cols-[25px_auto] py-4">
+                <NavbarMobileSocialsHolder />
+                <NavbarMobileLinkHolder pathname={pathname} />
+            </div>
         </motion.div>
     );
 };

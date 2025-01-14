@@ -3,9 +3,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import {
-    navbarMobileLinksVariant,
-    navbarMobileLinkVariant,
-    navbarMobileHeaderVariant,
+    navbarMobileLinkMoveYVariant,
+    navbarMobileSocialsDividerVariant,
+    navbarMobileMoveYHolderDelayedVariant,
 } from "@variants";
 import { SOCIALS_MOBILE } from "@data/socialLinks";
 import { useStatus, type initialStatusType } from "@/assets/context";
@@ -15,18 +15,16 @@ const NavbarMobileSocialsHolder: React.FC = (): React.ReactElement => {
     return (
         <motion.div
             initial="loaded"
-            className={`${navbarState === "expanded" ? "pointer-events-auto select-auto" : "user-all pointer-events-none"}`}
+            className={`${navbarState === "expanded" ? "pointer-events-auto select-auto space-y-4" : "user-all pointer-events-none"}`}
             animate={navbarState === "expanded" ? "expanded" : "loaded"}
         >
-            <motion.h3
-                variants={navbarMobileHeaderVariant}
-                className="my-4 rounded-md bg-white px-1 text-right text-lg font-semibold uppercase tracking-[0.2em] text-zinc-950"
-            >
-                socials
-            </motion.h3>
             <motion.div
-                className="flex justify-end gap-6"
-                variants={navbarMobileLinksVariant}
+                variants={navbarMobileSocialsDividerVariant}
+                className="mx-auto w-px bg-white"
+            ></motion.div>
+            <motion.div
+                className="flex flex-col items-center gap-4"
+                variants={navbarMobileMoveYHolderDelayedVariant}
             >
                 {SOCIALS_MOBILE.map((link) => {
                     return (
@@ -34,7 +32,7 @@ const NavbarMobileSocialsHolder: React.FC = (): React.ReactElement => {
                             key={link.id}
                             aria-label={link.name}
                             title={link.name}
-                            variants={navbarMobileLinkVariant}
+                            variants={navbarMobileLinkMoveYVariant}
                         >
                             <Link
                                 href={link.href}

@@ -13,7 +13,7 @@ import {
 import { usePathname } from "next/navigation";
 import { useStatus, type initialStatusType } from "@/assets/context";
 
-const Navbar: React.FC = () => {
+const Navbar: React.FC = (): React.ReactElement => {
     const pathname: string = usePathname();
     const {
         hasFinishedLoading,
@@ -56,7 +56,7 @@ const Navbar: React.FC = () => {
             </motion.div>
             {hasFinishedLoading && (
                 <>
-                    <span className="user-select-none pointer-events-none hidden w-16 md:block"></span>
+                    <span className="pointer-events-none hidden w-16 select-none md:block"></span>
                     <NavbarLinkHolder pathname={pathname} />
                     <NavbarSocialHolder />
                     <NavbarMobile pathname={pathname} />

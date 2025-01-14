@@ -50,7 +50,7 @@ export const SOCIALS_MOBILE: Readonly<SOCIALS_TYPE[]> = [
         href: "https://www.instagram.com/pesmcoe_acm",
         icon: React.createElement(FontAwesomeIcon, {
             icon: faInstagram,
-            size: "xl",
+            size: "2xl",
         }),
     },
     {
@@ -59,7 +59,7 @@ export const SOCIALS_MOBILE: Readonly<SOCIALS_TYPE[]> = [
         href: "https://www.linkedin.com/company/pesmcoe-acm-student-chapter",
         icon: React.createElement(FontAwesomeIcon, {
             icon: faLinkedin,
-            size: "xl",
+            size: "2xl",
         }),
     },
     {
@@ -68,7 +68,7 @@ export const SOCIALS_MOBILE: Readonly<SOCIALS_TYPE[]> = [
         href: "https://www.facebook.com/pesmcoeacm",
         icon: React.createElement(FontAwesomeIcon, {
             icon: faFacebook,
-            size: "xl",
+            size: "2xl",
         }),
     },
 ];

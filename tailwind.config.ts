@@ -16,7 +16,7 @@ function addVariablesForColors({ addBase, theme }: PluginAPI) {
 
 const NOISE = {
     ".noise": {
-        "@apply backdrop-blur-lg border border-white/50 transition duration-500":
+        "@apply backdrop-blur-lg border border-neutral-50 transition duration-500":
             {},
         "&::before": {
             "@apply -z-10 absolute top-0 left-0 size-full bg-blend-overlay opacity-20":
@@ -43,6 +43,7 @@ const config: Config = {
             animation: {
                 spotlight: "spotlight 2s ease 0.75s 1 forwards",
                 moveX: "moveX 30s linear infinite",
+                scroll: "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
             },
             keyframes: {
                 spotlight: {
@@ -61,6 +62,11 @@ const config: Config = {
                     },
                     "100%": {
                         backgroundPosition: "100% 0%",
+                    },
+                },
+                scroll: {
+                    to: {
+                        transform: "translate(calc(-50% - 0.5rem))",
                     },
                 },
             },
