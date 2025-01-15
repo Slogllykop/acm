@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { Language } from "@mui/icons-material";
+import type { InfiniteCarouselProps, Speed } from "./InfiniteCarousel.d";
 
 const TAGS: string[] = [
     "Department of Computer",
@@ -9,17 +10,18 @@ const TAGS: string[] = [
     "Modern College of Engineering",
 ];
 
+const SPEEDS: { [key in Speed]: string } = {
+    fast: "20s",
+    normal: "40s",
+    slow: "80s",
+};
+
 const ListItem: React.FC<{ text: string }> = ({ text }): React.ReactElement => (
-    <li key={text} className="relative flex flex-shrink-0 select-none">
+    <li className="relative flex flex-shrink-0 select-none">
         <h3>{text}</h3>
         <Language className="mx-4" />
     </li>
 );
-
-type InfiniteCarouselProps = {
-    direction?: "left" | "right";
-    speed?: "fast" | "normal" | "slow";
-};
 
 const InfiniteCarousel: React.FC<InfiniteCarouselProps> = ({
     direction = "left",
@@ -27,6 +29,7 @@ const InfiniteCarousel: React.FC<InfiniteCarouselProps> = ({
 }): React.ReactElement => {
     const containerRef = useRef<HTMLDivElement>(null);
     const scrollerRef = useRef<HTMLUListElement>(null);
+    const [start, setStart] = useState(false);
 
     useEffect(() => {
         if (!containerRef.current || !scrollerRef.current) return;
@@ -45,43 +48,17 @@ const InfiniteCarousel: React.FC<InfiniteCarouselProps> = ({
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    const [start, setStart] = useState(false);
-
-    const getDirection = () => {
-        if (!containerRef.current) return;
-
-        if (direction === "left") {
-            containerRef.current.style.setProperty(
-                "--animation-direction",
-                "forwards",
-            );
-        } else {
-            containerRef.current.style.setProperty(
-                "--animation-direction",
-                "reverse",
-            );
-        }
-    };
+    const getDirection = () =>
+        containerRef.current?.style.setProperty(
+            "--animation-direction",
+            direction === "left" ? "forwards" : "reverse",
+        );
 
     const getSpeed = () => {
-        if (!containerRef.current) return;
-
-        if (speed === "fast") {
-            containerRef.current.style.setProperty(
-                "--animation-duration",
-                "20s",
-            );
-        } else if (speed === "normal") {
-            containerRef.current.style.setProperty(
-                "--animation-duration",
-                "40s",
-            );
-        } else {
-            containerRef.current.style.setProperty(
-                "--animation-duration",
-                "80s",
-            );
-        }
+        containerRef.current?.style.setProperty(
+            "--animation-duration",
+            SPEEDS[speed],
+        );
     };
 
     return (

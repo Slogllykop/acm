@@ -5,6 +5,7 @@ import { CustomLayout } from "@components";
 import { Poppins } from "next/font/google";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 config.autoAddCss = false;
 
 // const geistSans = localFont({
@@ -38,6 +39,7 @@ export default function RootLayout({
     return (
         <html lang="en" className={poppins.className}>
             <body className={`scrollbar min-h-screen antialiased`}>
+                <SpeedInsights />
                 <CustomLayout>{children}</CustomLayout>
             </body>
         </html>
