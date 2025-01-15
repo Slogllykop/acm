@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Language } from "@mui/icons-material";
 
 const TAGS: string[] = [
@@ -23,18 +23,21 @@ type InfiniteCarouselProps = {
 
 const InfiniteCarousel: React.FC<InfiniteCarouselProps> = ({
     direction = "left",
-    speed = "slow",
+    speed = "normal",
 }): React.ReactElement => {
-    const containerRef = React.useRef<HTMLDivElement>(null);
-    const scrollerRef = React.useRef<HTMLUListElement>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
+    const scrollerRef = useRef<HTMLUListElement>(null);
 
     useEffect(() => {
         if (!containerRef.current || !scrollerRef.current) return;
 
-        Array.from(scrollerRef.current.children).forEach((item) =>
-            scrollerRef.current?.appendChild(item.cloneNode(true)),
-        );
+        const cloneItems = () =>
+            Array.from(scrollerRef.current!.children).forEach((item) => {
+                scrollerRef.current!.appendChild(item.cloneNode(true));
+            });
 
+        cloneItems();
+        cloneItems();
         getDirection();
         getSpeed();
         setStart(true);
@@ -90,9 +93,6 @@ const InfiniteCarousel: React.FC<InfiniteCarouselProps> = ({
                 ref={scrollerRef}
                 className={`${start ? "animate-scroll" : ""} flex w-max min-w-full shrink-0 flex-nowrap py-4`}
             >
-                {TAGS.map((text) => (
-                    <ListItem key={text} text={text} />
-                ))}
                 {TAGS.map((text) => (
                     <ListItem key={text} text={text} />
                 ))}
